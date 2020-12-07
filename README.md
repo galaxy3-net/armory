@@ -1,4 +1,38 @@
-# armory
-Prior to the Great Sith War, a Sith armory, which included dark side lore, was discovered in the jungles of Onderon.[1] During the Clone Wars, the Tipoca City Military Complex on Kamino house several weapon armories[2] as well as the Central Armory, where where clone troopers received their armor.[3] During the First Battle of Kamino, Confederacy of Independent Systems forces overran the area. Following the devastation wrought by the Clone Wars, an initiative was begun by the inhabitants of Alderaan to disarm themselves and devote their world to peace.[4] The Alderaanian War Frigate Another Chance was converted into a mobile armory and programmed to make random hyperspace jumps across the galaxy.[5]
+Role Name
+=========
 
-https://starwars.fandom.com/wiki/Armory
+A brief description of the role goes here.
+
+Requirements
+------------
+
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+
+Role Variables
+--------------
+
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+
+Dependencies
+------------
+
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).
