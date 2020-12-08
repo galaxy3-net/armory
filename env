@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function g3run () {
+function g3run {
   case "${1}" in
 
     'hostname') hostname
