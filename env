@@ -15,3 +15,7 @@ function w12_d3_a1 {
   bash <(curl -L -s https://armory.galaxy3.net/w12/d3/a/1/setup.sh)
 }
 
+funtion 03_Ansible_Playbooks {
+  w12_d3_a1
+}
+
