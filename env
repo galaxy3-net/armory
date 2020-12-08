@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function g3run () {
+  case "${1}" in
+
+    'hostname') hostname
+       ;;
+    *) echo "${1} is not a runnable Galaxy3 command"
+}
+
+
