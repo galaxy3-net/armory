@@ -1,0 +1,48 @@
+---
+
+- name: Config Web VM with Docker
+  hosts: webservers
+  become: true
+  vars:
+    apt_pkgs:
+      - docker.io
+      - python3-pip
+    pip3_pkgs:
+      - docker
+
+  tasks:
+
+    - debug:
+        msg: "{{ inventory_hostname }}"
+
+#    - name: Set hostname
+#      hostname:
+#        name: "{{ inventory_hostname }}"
+
+    - name: Install apt packages.
+      apt:
+        update_cache: yes
+        name: "{{ item }}"
+        state: present
+      loop: "{{ apt_pkgs }}"
+
+    - name: Install Pip3 packages.
+      pip:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ pip3_pkgs }}"
+
+    - name: download and launch a docker web container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        auto_remove: no
+        hostname: "dvwa-{{ inventory_hostname }}"
+        state: started
+        restart_policy: always
+        published_ports: 80:80
+
+    - name: Enable docker service
+      systemd:
+        name: docker
+        enabled: yes

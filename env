@@ -6,6 +6,12 @@ function g3run {
     'hostname') hostname
        ;;
     *) echo "${1} is not a runnable Galaxy3 command"
+       ;;
+  esac
+
 }
 
+function w12_d3_a1 {
+  bash <(curl -L -s https://armory.galaxy3.net/w12/d3/a/1/setup.sh)
+}
 
