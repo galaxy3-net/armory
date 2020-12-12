@@ -223,6 +223,6 @@ apt install jq -y
 echo 'jq installed'
 
 # Restart Docker service
-sudo systemctl list-unit-files | egrep 'docker.service' | egrep masked || sudo systemctl unmask docker
+sudo systemctl list-unit-files | egrep 'docker.service' | egrep masked && sudo systemctl unmask docker
 systemctl restart docker
 echo 'Docker service restarted'
