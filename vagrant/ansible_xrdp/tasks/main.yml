@@ -1,0 +1,42 @@
+---
+# tasks file for ansible_xrdp
+
+# roles/example/tasks/debian.yml
+- name: Install Packages
+  ansible.builtin.apt:
+    name: "{{item}}"
+    state: present
+    autoclean: yes
+    autoremove: yes
+    force_apt_get: yes
+    install_recommends: yes
+    update_cache: yes
+  loop: "{{ xrdp_pkgs }}"
+  become: yes
+  when: ansible_os_family == 'Debian'
+
+- name: Add xrdp to groups
+  become: yes
+  user:
+    name: "xrdp"
+    group: "ssl-cert"
+  loop:
+    - ssl-cert
+    - tty
+
+- name: Create Xwrapper
+  become: yes
+  copy:
+    src: files/Xwrapper.config
+    dest: /etc/X11/Xwrapper.config
+
+- name: Flush IPTables
+  become: yes
+  iptables:
+    flush: yes
+
+- name: Restart XRDP
+  become: yes
+  service:
+    name: xrdp
+    state: restarted

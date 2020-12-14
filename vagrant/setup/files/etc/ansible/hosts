@@ -1,0 +1,8 @@
+---
+#  https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+
+all:
+	hosts:
+		naboo.moddell.galaxy3.net:
+		naboo:
+			ansible_connection=local

@@ -1,0 +1,13 @@
+---
+# vars file for w10
+
+user_list:
+  - { name: julie, comment: "Julie's Account" }
+  - { name: tim, comment: "Tim's Account" }
+
+package_list:
+  - { name: "haveged" }
+  - { name: "tmux" }
+
+service_list:
+  - { name: "haveged" }

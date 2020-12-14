@@ -1,0 +1,18 @@
+---
+# vars file for pkgs.orig
+
+apt_pkgs:
+  - tree
+  - apache2
+  - make
+  - containerd
+  - docker
+  - docker.io
+  - net-tools
+  - dos2unix
+  - supervisor
+  - htop
+
+snap_pkgs:
+  - { name: terraform }
+  - { name: azure-cli, channel: beta, classic: yes }
