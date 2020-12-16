@@ -9,4 +9,4 @@ sudo -u vagrant -s "chmod 0700 /home/vagrant/.ssh"
 sudo -u vagrant -s "curl -o /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub"
 
 echo '%sudo ALL=NOPASSWD: ALL' >> /etc/sudoers
-useradd -a -G vagrant,sudo sudo
+usermod -a -G vagrant,sudo vagrant
