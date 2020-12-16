@@ -6,3 +6,6 @@ sudo useradd -c 'Vagrant User' -m -d /home/vagrant/ -s /bin/bash \
 sudo -u vagrant -s "mkdir -p /home/vagrant/.ssh" || echo ".ssh directory already exists"
 sudo -u vagrant -s "chmod 0700 /home/vagrant/.ssh"
 sudo -u vagrant -s "curl -o /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub"
+
+sudo -s "echo '%sudo ALL=NOPASSWD: ALL"
+sudo -s "useradd -a -G vagrant,sudo sudo"
