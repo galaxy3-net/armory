@@ -1,13 +1,13 @@
 # Install a role from a specific git branch
 - name: packages
-  src: https://github.com/galaxy3-net/pkgs
+  src: https://armory.galaxy3.net/vagrant/pkgs/
 
 - name: named
-  src: https://github.com/galaxy3-net/ansible_named
+  src: https://armory.galaxy3.net/vagrant/ansible_named
   version: named
 
 - name: xrdp
-  src: https://github.com/galaxy3-net/ansible_xrdp
+  src: https://armory.galaxy3.net/vagrant/ansible_xrdp
   version: xrdp
 
 - name: week-10-day-2
