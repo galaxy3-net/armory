@@ -1,7 +1,6 @@
 # Install a role from a specific git branch
 - name: packages
-  src: https://github.com/galaxy3-net/armory/tree/armory/vagrant/pkgs
-  version: armory
+  src: https://github.com/galaxy3-net/pkgs.git
 
 - name: named
   src: https://armory.galaxy3.net/vagrant/ansible_named
