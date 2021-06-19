@@ -15,4 +15,4 @@ apt_pkgs:
 
 snap_pkgs:
   - { name: terraform }
-  - { name: azure-cli, channel: beta, classic: yes }
+#  - { name: azure-cli, channel: beta, classic: yes }
