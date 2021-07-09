@@ -2,4 +2,4 @@
 
 export GITLAB_HOME=$HOME/gitlab
 
-docker-compose up -d
+sudo -E docker-compose up -d
