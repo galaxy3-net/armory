@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export GITLAB_HOME=/Downloads/gitlab
+export GITLAB_HOME=/gitlab
 
 sudo -E docker-compose up -d
