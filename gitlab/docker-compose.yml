@@ -2,6 +2,7 @@ web:
   image: 'gitlab/gitlab-ce:latest'
   restart: always
   hostname: 'localhost'
+  user: "vagrant:vagrant"
   environment:
     GITLAB_OMNIBUS_CONFIG: |
       #external_url 'http://localhost:8081/'
