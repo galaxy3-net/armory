@@ -8,7 +8,7 @@ web:
       #external_url 'https://gitlab.example.com'
       # Add any other gitlab.rb configuration here, each on its own line
   ports:
-    - '8081:80'
+    - '8081:8081'
     - '4443:443'
     - '221:22'
   volumes:
