@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
 stat ~/galaxy3/armory 2>/dev/null || git clone -b armory https://github.com/galaxy3-net/armory.git ~/galaxy3/armory
+
+cd ~/galaxy3/armory && git pull
+
