@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/sbin/entrypoint.sh start-service
