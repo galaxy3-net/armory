@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
 /sbin/entrypoint.sh start-service
+
+tail -f /dev/null
