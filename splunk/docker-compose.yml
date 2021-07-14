@@ -1,5 +1,5 @@
 splunk:
-  image: splunk/splunk:latest
+  image: g3splunk
   restart: always
   hostname: 'localhost'
   container_name: splunk
