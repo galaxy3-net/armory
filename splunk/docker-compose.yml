@@ -9,3 +9,6 @@ services:
       - SPLUNK_PASSWORD='cybersecurity'
     ports:
       - 8000:8000
+    volumes:
+      - '/splunk/etc:/opt/splunk/etc'
+      - '/splunk/var:/opt/splunk/var'
