@@ -3,7 +3,7 @@ splunk:
   restart: always
   hostname: 'localhost'
   container_name: splunk
-  entrypoint: /sbin/entrypoint.sh ; tail -f /dev/null
+  entrypoint: /sbin/g3_entrypoint ; tail -f /dev/null
   environment:
     - SPLUNK_START_ARGS=--accept-license
     - SPLUNK_PASSWORD='cybersecurity'
