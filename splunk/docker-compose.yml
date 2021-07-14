@@ -1,5 +1,5 @@
 splunk:
-  image: ${SPLUNK_IMAGE:-splunk/splunk:latest}
+  image: splunk/splunk:latest
   restart: always
   hostname: 'localhost'
   environment:
