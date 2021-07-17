@@ -4,8 +4,8 @@ source ./.env
 
 # [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
 
-mkdir -p /splunk/{etc,var}
-ls -l /splunk
+#mkdir -p /splunk/{etc,var}
+
 
 docker volume create --driver local \
     --opt type=none \
@@ -16,6 +16,8 @@ docker volume create --driver local \
     --opt type=none \
     --opt device=/splunk/var \
     --opt o=bind opt_splunk_var
+
+ls -l /splunk
 
 sudo systemctl enable docker
 sudo systemctl restart docker
