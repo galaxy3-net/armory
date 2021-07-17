@@ -5,9 +5,9 @@ version: "3.6"
 #    external: true
 #  opt_splunk_var:
 #    external: true
-volumes:
-  - /splunk/etc:/opt/splunk/etc:rwx
-  - /splunk/var:/opt/splunk/var:rwx
+#volumes:
+#  - /splunk/etc:/opt/splunk/etc:rwx
+#  - /splunk/var:/opt/splunk/var:rwx
 
 services:
   splunk:
@@ -21,3 +21,6 @@ services:
       - SPLUNK_PASSWORD='cybersecurity'
     ports:
       - 8000:8000
+    volumes:
+      - /splunk/etc:/opt/splunk/etc:rwx
+      - /splunk/var:/opt/splunk/var:rwx
