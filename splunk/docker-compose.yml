@@ -12,6 +12,7 @@ version: "3.6"
 services:
   splunk:
     image: g3splunk
+    user: splunk
     restart: always
     privileged: true
     container_name: splunk
