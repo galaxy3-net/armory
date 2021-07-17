@@ -7,6 +7,16 @@ source ./.env
 mkdir -p /splunk/{etc,var}
 ls -l /splunk
 
+docker volume create --driver local \
+    --opt type=none \
+    --opt device=/splunk/etc \
+    --opt o=bind opt_splunk_etc
+
+docker volume create --driver local \
+    --opt type=none \
+    --opt device=/splunk/var \
+    --opt o=bind opt_splunk_var
+
 sudo systemctl enable docker
 sudo systemctl restart docker
 

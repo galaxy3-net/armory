@@ -3,7 +3,6 @@ version: "3.6"
 services:
   splunk:
     image: g3splunk
-    restart: always
     container_name: splunk
     entrypoint: /sbin/g3_entrypoint
     environment:
@@ -12,5 +11,5 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - opt_splunk_etc:/opt/splunk/etc:rw
-      - opt_splunk_var:/opt/splunk/var:rw
+      - '/splunk/etc:/opt/splunk/etc:rw'
+      - '/splunk/var:/opt/splunk/var:rw'
