@@ -16,7 +16,7 @@ sudo docker volume rm opt_splunk_var
 
 #sudo docker volume create --driver local \
 #    --opt type=none \
-3    --opt device=/splunk/var \
+#    --opt device=/splunk/var \
 #    --opt o=bind opt_splunk_var
 
 ls -l /splunk
