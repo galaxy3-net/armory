@@ -1,5 +1,12 @@
 version: "3.6"
 
+volumes:
+  opt_splunk_etc:
+    external: true
+  opt_splunk_var:
+    external: true
+
+
 services:
   splunk:
     image: g3splunk
