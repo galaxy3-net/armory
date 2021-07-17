@@ -22,5 +22,5 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - /splunk/etc:/opt/splunk/etc:rwx
-      - /splunk/var:/opt/splunk/var:rwx
+      - /splunk/etc:/opt/splunk/etc:rw
+      - /splunk/var:/opt/splunk/var:rw
