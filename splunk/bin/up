@@ -4,6 +4,8 @@ source ./.env
 
 # [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
 
+mkdir -p /splunk/{etc,var}
+
 sudo systemctl enable docker
 sudo systemctl restart docker
 
