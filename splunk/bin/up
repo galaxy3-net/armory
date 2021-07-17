@@ -6,9 +6,6 @@ source ./.env
 
 #mkdir -p /splunk/{etc,var}
 
-sudo docker volume rm opt_splunk_etc
-sudo docker volume rm opt_splunk_var
-
 #udo docker volume create --driver local \
 #    --opt type=none \
 #    --opt device=/splunk/etc \
@@ -23,6 +20,8 @@ ls -l /splunk
 
 sudo systemctl enable docker
 sudo systemctl restart docker
+
+sleep 10
 
 (cd Docker ; sudo -E docker build -t g3splunk .)
 
