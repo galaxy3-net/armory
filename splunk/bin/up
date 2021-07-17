@@ -9,16 +9,6 @@ source ./.env
 sudo docker volume rm opt_splunk_etc
 sudo docker volume rm opt_splunk_var
 
-sudo docker volume create \
-    --opt type=btrfs \
-    --opt device=/dev/sda2 \
-    opt_splunk_etc
-sudo docker volume create \
-    --opt type=btrfs \
-    --opt device=/dev/sda3 \
-    opt_splunk_var
-
-
 #udo docker volume create --driver local \
 #    --opt type=none \
 #    --opt device=/splunk/etc \
