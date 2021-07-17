@@ -4,6 +4,9 @@ source ./.env
 
 # [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
 
+sudo systemctl enable docker
+sudo systemctl restart docker
+
 (cd Docker ; sudo -E docker build -t g3splunk .)
 
 sudo -E docker-compose up -d
