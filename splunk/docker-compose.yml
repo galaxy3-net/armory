@@ -11,6 +11,7 @@ services:
   splunk:
     image: g3splunk
     restart: always
+    privileged: true
     container_name: splunk
     entrypoint: /sbin/g3_entrypoint
     environment:
