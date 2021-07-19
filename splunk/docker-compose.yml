@@ -19,6 +19,8 @@ services:
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD='cybersecurity'
+      - hec_disabled=true
+      - NO_HEALTHCHECK=true
     ports:
       - 8000:8000
     volumes:
