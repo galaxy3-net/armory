@@ -1,0 +1,31 @@
+version: "3.6"
+
+services:
+  dhcpd:
+    image:
+      networkboot/dhcpd:latest
+    restart: unless-stopped
+    container_name: dhcpd
+    hostname: 'localhost'
+    network_mode: host
+    environment:
+      - IFACE=eth0
+#    GITLAB_OMNIBUS_CONFIG: |
+#      external_url 'http://localhost:8081'
+      #external_url 'https://gitlab.example.com'
+      # Add any other gitlab.rb configuration here, each on its own line
+#   ports:
+#      - '10.55.56.2:67:67/tcp'
+#      - '10.55.56.2:67:67/udp'
+#      - '67:67/tcp'
+#      - '67:67/udp'
+#      - "8080:8080"
+#      - "3000:3000"
+#    - '4443:443'
+#    - '221:22'
+    volumes:
+      - '/home/vagrant/dhcpd/data:/data'
+#    - '$GITLAB_HOME/config:/etc/gitlab'
+#    - '$GITLAB_HOME/logs:/var/log/gitlab'
+#    - '$GITLAB_HOME/data:/var/opt/gitlab'
+

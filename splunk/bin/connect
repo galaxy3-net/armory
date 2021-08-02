@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sudo docker exec -it splunk /bin/bash
+source ./.env
+
+sudo docker exec -it ${__NAME__} /bin/bash

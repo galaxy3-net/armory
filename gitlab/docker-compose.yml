@@ -2,13 +2,14 @@ web:
   image: 'gitlab/gitlab-ce:latest'
   restart: always
   hostname: 'localhost'
+  container_name: 'gitlab'
   environment:
     GITLAB_OMNIBUS_CONFIG: |
-      external_url 'http://localhost:8081'
+      external_url 'http://localhost:8083'
       #external_url 'https://gitlab.example.com'
       # Add any other gitlab.rb configuration here, each on its own line
   ports:
-    - '8081:8081'
+    - '8083:8083'
     - '4443:443'
     - '221:22'
   volumes:

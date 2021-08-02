@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+source ./.env
+
+sudo docker-compose down
+
+# [ -d ${GITLAB_HOME} ] && sudo rsync -av ${GITLAB_HOME}/ ${GITLAB_BACKUP}

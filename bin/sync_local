@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rsync -ravz --delete --exclude '.git' --exclude '.idea' ~/repositories/github/galaxy3/armory/  ~/galaxy3/Downloads/armory/
+

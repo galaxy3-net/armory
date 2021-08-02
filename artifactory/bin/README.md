@@ -1,0 +1,1 @@
+- [Splunk from Compose](https://splunk.github.io/docker-splunk/EXAMPLES.html#create-standalone-from-compose)

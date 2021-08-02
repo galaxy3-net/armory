@@ -1,0 +1,15 @@
+version: "3.6"
+
+
+services:
+  named:
+    build: Docker/.
+    user: ${__CONTAINER_USER__}
+    restart: always
+    container_name: ${__NAME__}
+    ports:
+      - 10.55.55.2:53:53/tcp
+      - 10.55.55.2:53:53/udp
+#    volumes:
+#      - /splunk/etc:/opt/splunk/etc:rw
+#      - /splunk/var:/opt/splunk/var:rw

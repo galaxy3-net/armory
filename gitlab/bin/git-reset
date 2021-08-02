@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+source ./.env
+
 git reset --hard origin/armory

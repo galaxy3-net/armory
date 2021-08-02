@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sudo docker restart splunk
+source ./.env
+
+sudo docker restart ${__NAME__}

@@ -11,6 +11,15 @@ References
 - [https://docs.gitlab.com/runner/install/](https://docs.gitlab.com/runner/install/)
 - [Registering Runners](https://docs.gitlab.com/runner/register/#:~:text=%20Registering%20runners%20%201%20Docker.%20The%20instructions,instance%20URL%20%28also%20known%20as%20the...%20More%20)
 - [The .gitlab-ci.yml file](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
+
+1. ucibox up
+2. ucibox ssh
+3. bash -c "$(curl -s https://raw.githubusercontent.com/galaxy3-net/armory/armory/setup)"
+4. cd ~/galaxy3/armory/splunk
+5. bin/up
+
+
+
 ```aidl
 bash-3.2$ brew install gitlab-runner
 ==> Downloading https://ghcr.io/v2/homebrew/core/gitlab-runner/manifests/14.0.1

@@ -4,25 +4,11 @@ source ./.env
 
 # [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
 
-#mkdir -p /splunk/{etc,var}
-
-#udo docker volume create --driver local \
-#    --opt type=none \
-#    --opt device=/splunk/etc \
-#    --opt o=bind opt_splunk_etc
-
-#sudo docker volume create --driver local \
-#    --opt type=none \
-#    --opt device=/splunk/var \
-#    --opt o=bind opt_splunk_var
-
-ls -l /splunk
-
 sudo systemctl enable docker
 sudo systemctl restart docker
 
 sleep 10
 
-(cd Docker ; sudo -E docker build -t g3splunk .)
+(cd Docker && sudo -E docker build -t g3${__NAME__} .)
 
 sudo -E docker-compose up -d

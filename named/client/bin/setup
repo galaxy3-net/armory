@@ -1,0 +1,12 @@
+
+cat > /etc/resolv.conf <<_EOD_
+domain moddell.galaxy3.net
+search moddell.galaxy3.net
+nameserver 10.55.55.2
+_EOD_
+
+sudo apt install resolvconf -y
+
+systemctl enable resolvconf.service
+systemctl start resolvconf.service
+systemctl status resolvconf.service

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+source ./.env
+
+# [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
+
+sudo systemctl enable docker
+sudo systemctl restart docker
+
+sleep 10
+
+mkdir -p ${HOME}/dhcpd/data/
+
+cp -r ./data/ ${HOME}/dhcpd/
+
+__INTERFACE__=$(netstat -r | awk '$1 == "10.55.55.0" {print $8}')
+echo ${__INTERFACE__}
+sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+
+__INTERFACE__=$(netstat -r | awk '$1 == "10.55.56.0" {print $8}')
+echo ${__INTERFACE__}
+sudo ifconfig ${__INTERFACE__}:0 10.55.56.2 netmask 255.255.255.0 up
+
+sudo -E docker-compose up --build --remove-orphans -d

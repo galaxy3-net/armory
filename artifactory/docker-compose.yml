@@ -1,0 +1,28 @@
+version: "3.6"
+
+#volumes:
+#  opt_splunk_etc:
+#    external: true
+#  opt_splunk_var:
+#    external: true
+#volumes:
+#  - /splunk/etc:/opt/splunk/etc:rwx
+#  - /splunk/var:/opt/splunk/var:rwx
+
+services:
+  splunk:
+    image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+    #user: splunk
+    restart: always
+    container_name: artifactory
+    #entrypoint: /sbin/g3_entrypoint
+#    environment:
+#      - SPLUNK_START_ARGS=--accept-license
+#      - SPLUNK_PASSWORD='cybersecurity'
+#      - hec_disabled=true
+#      - NO_HEALTHCHECK=true
+    ports:
+      - 8081:8081
+      - 8082:8082
+    volumes:
+      - ~/Downloads/artifactory/var:/var/opt/jfrog/artifactory:rw

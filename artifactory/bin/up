@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source ./.env
+
+# [ -d ${GITLAB_BACKUP} ] && sudo rsync -av ${GITLAB_BACKUP}/ ${GITLAB_HOME}
+
+sudo systemctl enable docker
+sudo systemctl restart docker
+
+sleep 10
+
+#(cd Docker && sudo -E docker build -t ${__NAME__} .)
+
+sudo -E docker-compose up -d
