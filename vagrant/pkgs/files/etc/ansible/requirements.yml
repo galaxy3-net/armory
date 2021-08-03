@@ -15,3 +15,6 @@
 
 - name: ghomrassen
   src: https://github.com/galaxy3-net/ghomrassen
+
+- name: armory
+  src: https://github.com/galaxy3-net/ansible_armory
