@@ -11,4 +11,4 @@ sleep 10
 
 # (cd Docker && sudo -E docker build -t g3${__NAME__} .)
 
-sudo -E docker-compose up -d --force-recreate
+sudo -E docker-compose up --build --remove-orphans -d --force-recreate
