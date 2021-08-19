@@ -91,7 +91,9 @@
         backup: yes
 
     - name: Run setup
-      command: ". /etc/profile ; export JAVA_HOME=/usr/lib/jvm/bellsoft-java8-full-amd64 ; chmod u+x ./unix_setup.sh ; ls -l ; ./unix_setup.sh"
+      command:
+        - pwd
+        - ls
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
