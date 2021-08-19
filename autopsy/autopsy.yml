@@ -91,7 +91,7 @@
         backup: yes
 
     - name: Run setup
-      command: pwd
+      command: pwd ; ls -l
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
