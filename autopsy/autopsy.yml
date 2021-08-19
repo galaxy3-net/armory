@@ -91,7 +91,7 @@
         backup: yes
 
     - name: Run setup
-      command: ". /etc/profile ; chmod u+x ./unix_setup.sh ; ./unix_setup.sh"
+      command: ". /etc/profile ; chmod u+x ./unix_setup.sh ; ls -l ; ./unix_setup.sh"
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
