@@ -122,3 +122,9 @@
         owner: root
         group: root
         state: link
+
+    # Same as previous but using entry shorthand
+    - acl:
+        path: /root
+        entry: "default:user:vagrant:--x"
+        state: present
