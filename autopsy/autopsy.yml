@@ -1,0 +1,97 @@
+---
+
+- name: Download Zip
+  hosts: 127.0.0.1
+  connection: local
+  become: yes
+  vars:
+    pkgs:
+      - testdisk
+      - build-essential
+      - autoconf
+      - libtool
+      - git-core
+      - bellsoft-java8-full
+    pkgs2:
+      - imagemagick
+      - libmagickcore-dev
+      - libde265
+      - libheif
+
+  tasks:
+
+    - name: Download
+      get_url:
+        url: 'https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.19.1/autopsy-4.19.1.zip'
+        dest: '/Downloads/autopsy-4.19.1.zip'
+        mode: '0440'
+
+    - name: Unarchive
+      unarchive:
+        src:  '/Downloads/autopsy-4.19.1.zip'
+        dest: '/Downloads/'
+        remote_src: yes
+        creates: '/Downloads/autopsy-4.19.1'
+
+#    - name: Download DEB
+#      get_url:
+#        url: 'https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.0/sleuthkit-java_4.11.0-1_amd64.deb'
+#        dest: '/Downloads/sleuthkit-java_4.11.0-1_amd64.deb'
+#        mode: '0440'
+
+    - name: Install DEB
+      apt:
+        deb: 'https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.0/sleuthkit-java_4.11.0-1_amd64.deb'
+
+
+    - name: Add an Apt signing key, uses whichever key is at the URL
+      ansible.builtin.apt_key:
+        url: "https://download.bell-sw.com/pki/GPG-KEY-bellsoft"
+        state: present
+
+    - name: Add specified repository into sources list
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
+        state: present
+
+    - name: Fix Sources
+      replace:
+        path: "/etc/apt/sources.list"
+        regexp: "^# deb-src "
+        replace: "deb-src "
+        backup: yes
+
+    - name: Install Dependencies
+      apt:
+        name: "{{ pkgs }}"
+        state: present
+        update_cache: yes
+
+    - name: Build Dependencies
+      apt:
+        name: "{{pkgs2 }}"
+        state: build-dep
+#        update_cache: yes
+
+    - name: Add an Apt signing key, uses whichever key is at the URL
+      ansible.builtin.apt_key:
+        url: "https://download.bell-sw.com/pki/GPG-KEY-bellsoft"
+        state: present
+
+    - name: Add specified repository into sources list
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
+        state: present
+
+    - name: Update Profile
+      lineinfile:
+        path: "/etc/profile"
+        line: "export JAVA_HOME=/usr/lib/jvm/bellsoft-java8-full-amd64"
+        insertafter: EOF
+        backup: yes
+
+    - name: Run setup
+      command:
+        cmd: "unix_setup.sh"
+        args:
+          chdir: "/Downloads/autopsy-4.19.1"
