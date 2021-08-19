@@ -107,3 +107,18 @@
       debug:
         var: results
 
+    - name: Directories
+      file:
+        path: /root/autopsy-files
+        owner: root
+        group: root
+        mode: 0755
+        state: directory
+
+    - name: Create a symbolic link
+      ansible.builtin.file:
+        src: /Downloads/autopsy-4.19.1
+        dest: /root/autopsy-files/autopsy-4.19.1
+        owner: root
+        group: root
+        state: link
