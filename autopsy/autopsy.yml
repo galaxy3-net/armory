@@ -98,4 +98,5 @@
       register: output
 
     - name: debug
-      debug: output
+      debug:
+        var: output
