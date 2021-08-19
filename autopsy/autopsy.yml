@@ -91,6 +91,6 @@
         backup: yes
 
     - name: Run setup
-      command: "unix_setup.sh"
+      command: unix_setup.sh
         args:
           chdir: "/Downloads/autopsy-4.19.1"
