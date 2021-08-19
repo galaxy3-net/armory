@@ -95,6 +95,7 @@
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
+      ignore_errors: True
       register: results
 
     - name: debug
