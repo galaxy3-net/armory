@@ -94,7 +94,7 @@
 
 
     - name: Run setup
-      command: 'pwd ; ls -l'
+      command: './unix_setup.sh'
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
