@@ -95,8 +95,9 @@
       become: yes
       args:
         chdir: "/Downloads/autopsy-4.19.1"
-      register: output
+      register: results
 
     - name: debug
       debug:
-        var: output
+        var: results.output
+
