@@ -92,6 +92,6 @@
 
     - name: Run setup
       become: yes
-      command: ". /etc/profile ; ./unix_setup.sh"
+      command: ". /etc/profile ; chmod u+x ./unix_setup.sh ; ./unix_setup.sh"
       args:
         chdir: "/Downloads/autopsy-4.19.1"
