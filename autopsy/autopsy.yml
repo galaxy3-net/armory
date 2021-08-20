@@ -127,7 +127,7 @@
       acl:
         path: /root
         entity: vagrant
-        etype: mask
+        etype: user
         permissions: rwx
         default: no
         state: present
