@@ -126,5 +126,5 @@
     # Same as previous but using entry shorthand
     - acl:
         path: /root
-        entry: "default:user:vagrant:--x"
+        entry: "default:user:vagrant:rwx"
         state: present
