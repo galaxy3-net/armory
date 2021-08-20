@@ -24,9 +24,9 @@
 
   tasks:
 
-#    - name: the list
-#      debug:
-#        - msg: "{{ urls }}"
+    - name: the list
+      debug:
+        msg: "{{ urls }}"
 
     - name: Download
       get_url:
