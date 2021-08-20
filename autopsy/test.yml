@@ -8,3 +8,11 @@
 - name: placeholder bar
   debug:
     msg: /bin/bar
+
+#    - name: Download
+#      get_url:
+#        url: "{{ item.url }}"
+#        dest: "{{ item.dest | default('/Downloads') }}"
+#        mode: "{{ item.mode | default('0440') }}"
+#      loop:
+#        "{{ urls }}"
