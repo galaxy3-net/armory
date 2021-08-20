@@ -30,7 +30,7 @@
           dest: "{{ item.dest | default('/Downloads') }}"
           mode: "{{ item.mode | degault('0440') }}"
         loop:
-          - urls
+          - "{{ urls }}"
 
       - name: Unarchive
         unarchive:
