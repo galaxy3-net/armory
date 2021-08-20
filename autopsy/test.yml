@@ -17,7 +17,7 @@
 - name: Debug
   debug:
     msg: "Ansible When File Exists Example."
-  when: result.stat.exists
+  when: not result.stat.exists
 
 #    - name: Download
 #      get_url:
