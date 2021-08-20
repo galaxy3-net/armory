@@ -7,6 +7,7 @@
   vars:
     dirs:
       - dir: /Downloads/Corpus
+      - dir: /root/autopsy-files
     links:
       - src: /Downloads/autopsy-4.19.1
         dest: /root/autopsy-files/autopsy-4.19.1
@@ -28,6 +29,8 @@
       - url: 'https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.19.1/autopsy-4.19.1.zip'
         dest: '/Downloads/autopsy-4.19.1.zip'
       - url: 'http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/carry-phone/carry-phone-2012-07-15-final.zip'
+        dest: "/Downloads/Corpus"
+      - url: 'http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/carry-tablet/carry-tablet-2012-07-16-final.tar'
         dest: "/Downloads/Corpus"
 
   tasks:
