@@ -128,6 +128,6 @@
         path: /root
         entity: vagrant
         etype: user
-        permissions: rwx
+        permissions: x
         default: no
         state: present
