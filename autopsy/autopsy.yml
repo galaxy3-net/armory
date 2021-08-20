@@ -234,7 +234,7 @@
         path: /root
         entity: vagrant
         etype: user
-        permissions: x
+        permissions: rx
         default: no
         state: present
 
