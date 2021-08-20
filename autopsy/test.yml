@@ -6,4 +6,5 @@
     msg: /bin/foo
 
 - name: placeholder bar
-  command: /bin/bar
+  debug:
+    msg: /bin/bar
