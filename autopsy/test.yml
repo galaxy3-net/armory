@@ -1,13 +1,13 @@
 ---
 # possibly saved as tasks/foo.yml
 
-- name: placeholder foo
-  debug:
-    msg: "{{ my_msg }}/bin/foo"
+#- name: placeholder foo
+#  debug:
+#    msg: "{{ my_msg }}/bin/foo"
 
-- name: placeholder bar
-  debug:
-    msg: /bin/bar
+#- name: placeholder bar
+#  debug:
+#    msg: /bin/bar
 
 - name: Exists
   stat:
