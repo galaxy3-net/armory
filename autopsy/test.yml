@@ -11,7 +11,7 @@
 
 - name: Exists
   stat:
-    path: /home/mdtutorials2/sample_file.txt
+    path: "{{ creates }}"
   register: result
 
 - name: Debug

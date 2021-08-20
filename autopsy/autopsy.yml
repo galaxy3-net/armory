@@ -164,6 +164,9 @@
       include: test.yml
       vars:
         my_msg: "{{ item.url }}"
+        url: "{{ item.url }}"
+        dest: "{{ item.dest | default('/Downloads') }}"
+        creates: "{{ item.creates }}"
       loop:
         "{{ urls }}"
 #
