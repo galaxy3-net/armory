@@ -2,7 +2,8 @@
 # possibly saved as tasks/foo.yml
 
 - name: placeholder foo
-  command: /bin/foo
+  debug:
+    msg: /bin/foo
 
 - name: placeholder bar
   command: /bin/bar
