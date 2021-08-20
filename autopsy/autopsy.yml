@@ -5,6 +5,13 @@
   connection: local
   become: yes
   vars:
+    dirs:
+      - dir: /Downloads/Corpus
+    links:
+      - src: /Downloads/autopsy-4.19.1
+        dest: /root/autopsy-files/autopsy-4.19.1
+      - src: /Downloads/Corpus
+        dest: /root/corpus
     pkgs:
       - testdisk
       - build-essential
@@ -40,6 +47,16 @@
         msg: "{{ item.url }}"
       loop:
         "{{ urls | flatten(levels=1) }}"
+
+    - name: Create a directories if they don't exist
+      ansible.builtin.file:
+        path: "{{ item.dir }}"
+        state: directory
+        mode: "{{ item.mode | default('0755') }}"
+      loop:
+        dirs
+
+
 
     - name: Download
       get_url:
@@ -128,13 +145,6 @@
 #        mode: 0755
 #        state: directory
 
-    - name: Create a symbolic link
-      ansible.builtin.file:
-        src: /Downloads/autopsy-4.19.1
-        dest: /root/autopsy-files/autopsy-4.19.1
-        owner: root
-        group: root
-        state: link
 
     - name: setfacl
       acl:
@@ -144,3 +154,13 @@
         permissions: x
         default: no
         state: present
+
+    - name: Create a symbolic link
+      ansible.builtin.file:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: "{{ item.owner | default('root') }}"
+        group: "{{ item.group | default('root') }}"
+        state: link
+      loop:
+        links
