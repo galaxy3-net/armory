@@ -56,18 +56,56 @@
         dest: "/Downloads/Corpus"
       - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/tracy-phone/tracy-phone-2012-07-15-final.tar
         dest: "/Downloads/Corpus"
+
+        #  Tracy’s external hard drive
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/tracy-external/tracy-external-2012-07-16-final.E01
+        dest: "/Downloads/Corpus"
+
+        #  Tracy’s home computer
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/tracy-home/tracy-home-2012-07-16-final.E01
+        dest: "/Downloads/Corpus"
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/tracy-home/tracy-home-2012-07-16-final.E02
+        dest: "/Downloads/Corpus"
+
+        #  Exterior Network Packet Dumps
+
+        #  exterior 2012-07-06
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-exterior-2012-07-06.pcap
+        dest: "/Downloads/Corpus"
+
+        #  exterior 2012-07-09
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-exterior-2012-07-09.pcap
+        dest: "/Downloads/Corpus"
+
+        #  exterior 2012-07-10
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-exterior-2012-07-10.pcap
+        dest: "/Downloads/Corpus"
+
+        #  exterior 2012-07-12
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-exterior-2012-07-12.txt
+        dest: "/Downloads/Corpus"
+
+        #  Interior Network Packet Dumps
+
+        #  interior 2012-07-06
+      - url:  http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-interior-2012-07-06.pcap
+        dest: "/Downloads/Corpus"
+
+        #  interior 2012-07-09
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-interior-2012-07-09.pcap
+        dest: "/Downloads/Corpus"
+
+        #  interior 2012-07-10
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-interior-2012-07-10.pcap
+        dest: "/Downloads/Corpus"
+
+        #  interior 2012-07-12
+      - url: http://downloads.digitalcorpora.org/corpora/scenarios/2012-ngdc/net/ngdc-interior-2012-07-12.txt
+        dest: "/Downloads/Corpus"
+
   #      - url:
   #        dest: "/Downloads/Corpus"
-  #      - url:
-  #        dest: "/Downloads/Corpus"
-  #      - url:
-  #        dest: "/Downloads/Corpus"
-  #      - url:
-  #        dest: "/Downloads/Corpus"
-  #      - url:
-  #        dest: "/Downloads/Corpus"
-  #      - url:
-  #        dest: "/Downloads/Corpus"
+
   #      - url:
   #        dest: "/Downloads/Corpus"
 
