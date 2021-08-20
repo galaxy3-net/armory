@@ -163,7 +163,7 @@
     - name: Test Include
       include: test.yml
       vars:
-        my_msg: "item.url"
+        my_msg: "{{ item.url }}"
       loop:
         "{{ urls }}"
 #
