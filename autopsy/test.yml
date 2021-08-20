@@ -17,7 +17,7 @@
 - name: Skipping
   debug:
     msg: "Skipping {{ creates }} already exists"
-  when: not result.stat.exists
+  when: result.stat.exists
 
 
 #- name: Debug
@@ -25,7 +25,7 @@
 #    msg: "Ansible When File Exists Example."
 #  when: not result.stat.exists
 
-- name: Download
+- name: Download {{ creates }}
   get_url:
     url: "{{ url }}"
     dest: "{{ dest }}"
