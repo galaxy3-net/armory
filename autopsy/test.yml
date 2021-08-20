@@ -9,6 +9,16 @@
   debug:
     msg: /bin/bar
 
+- name: Exists
+  stat:
+    path: /home/mdtutorials2/sample_file.txt
+  register: result
+
+- -name: Debug
+   debug:
+      msg: "Ansible When File Exists Example."
+   when: result.stat.exists
+
 #    - name: Download
 #      get_url:
 #        url: "{{ item.url }}"
