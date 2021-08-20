@@ -7,7 +7,7 @@
 
 #  tasks:
 
-    - name: test Debug
-      debug:
-        msg = "Test Debug"
+- name: test Debug
+  debug:
+    msg = "Test Debug"
 
