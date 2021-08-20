@@ -28,6 +28,12 @@
       debug:
         msg: "{{ urls }}"
 
+    - name: unflattened list
+      debug:
+        msg: "{{ item.url }}"
+      loop:
+        "{{ urls }}"
+
     - name: Download
       get_url:
         url: "{{ item.url }}"
