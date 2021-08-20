@@ -129,5 +129,5 @@
         entity: vagrant
         etype: mask
         permissions: rwx
-        default: yes
+        default: no
         state: present
