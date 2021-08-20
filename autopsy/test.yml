@@ -14,15 +14,20 @@
     path: "{{ creates }}"
   register: result
 
-- name: Debug
+- name: Skipping
   debug:
-    msg: "Ansible When File Exists Example."
+    msg: "Skipping {{ creates }} already exists"
   when: not result.stat.exists
 
-#    - name: Download
-#      get_url:
-#        url: "{{ item.url }}"
-#        dest: "{{ item.dest | default('/Downloads') }}"
-#        mode: "{{ item.mode | default('0440') }}"
-#      loop:
-#        "{{ urls }}"
+
+#- name: Debug
+#  debug:
+#    msg: "Ansible When File Exists Example."
+#  when: not result.stat.exists
+
+- name: Download
+  get_url:
+    url: "{{ url }}"
+    dest: "{{ dest }}"
+  when: not result.stat.exists
+#    mode: "{{ item.mode | default('0440') }}"
