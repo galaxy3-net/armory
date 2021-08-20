@@ -167,7 +167,6 @@
         url: "{{ item.url }}"
         dest: "{{ item.dest | default('/Downloads') }}"
         mode: "{{ item.mode | default('0440') }}"
-      creates: "{{ item.creates }}"
       loop:
         "{{ urls }}"
 
