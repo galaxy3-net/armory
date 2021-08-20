@@ -28,7 +28,7 @@
         get_url:
           url: "{{ item.url }}"
           dest: "{{ item.dest | default('/Downloads') }}"
-          mode: "{{ item.mode | degault('0440') }}"
+          mode: "{{ item.mode | default('0440') }}"
         loop:
           - "{{ urls }}"
 
