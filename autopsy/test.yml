@@ -3,7 +3,7 @@
 
 - name: placeholder foo
   debug:
-    msg: /bin/foo
+    msg: "{{ my_msg }}/bin/foo"
 
 - name: placeholder bar
   debug:

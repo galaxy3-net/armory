@@ -161,7 +161,7 @@
         "{{ dirs }}"
 
     - name: Test Include
-      include: test.yml
+      include: test.yml my_msg="korben"
 
 #    - name: Download
 #      get_url:
