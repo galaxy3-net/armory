@@ -38,7 +38,7 @@
       debug:
         msg: "{{ item.url }}"
       loop:
-        "{{ urld | flatten(levels=1) }}"
+        "{{ urls | flatten(levels=1) }}"
 
     - name: Download
       get_url:
