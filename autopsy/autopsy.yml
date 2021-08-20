@@ -128,3 +128,12 @@
         path: /root
         entry: "default:user:vagrant:rwx"
         state: present
+
+    - name: setfacl
+      acl:
+        path: /root
+        entity: vagrant
+        etype: user
+        permissions: rwx
+        default: yes
+        state: present
