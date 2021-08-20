@@ -15,9 +15,9 @@
   register: result
 
 - name: Debug
-   debug:
-      msg: "Ansible When File Exists Example."
-   when: result.stat.exists
+  debug:
+    msg: "Ansible When File Exists Example."
+  when: result.stat.exists
 
 #    - name: Download
 #      get_url:
