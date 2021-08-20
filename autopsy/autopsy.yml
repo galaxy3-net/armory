@@ -21,7 +21,7 @@
       - { url: 'https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.19.1/autopsy-4.19.1.zip',
         dest: '/Downloads/autopsy-4.19.1.zip'  }
 
-    tasks:
+  tasks:
 
       - name: Download
         get_url:
