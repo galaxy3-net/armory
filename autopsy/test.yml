@@ -1,13 +1,8 @@
-#---
+---
+# possibly saved as tasks/foo.yml
 
-#- name: Test Download Zip
-#  hosts: 127.0.0.1
-#  connection: local
-#  become: yes
+- name: placeholder foo
+  command: /bin/foo
 
-#  tasks:
-
-- name: test Debug
-  debug:
-    msg = "Test Debug"
-
+- name: placeholder bar
+  command: /bin/bar
