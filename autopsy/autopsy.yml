@@ -123,17 +123,11 @@
         group: root
         state: link
 
-    # Same as previous but using entry shorthand
-    - acl:
-        path: /root
-        entry: "default:user:vagrant:rwx"
-        state: present
-
     - name: setfacl
       acl:
         path: /root
         entity: vagrant
-        etype: user
+        etype: mask
         permissions: rwx
         default: yes
         state: present
