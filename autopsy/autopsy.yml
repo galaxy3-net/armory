@@ -47,60 +47,60 @@
           url: "https://download.bell-sw.com/pki/GPG-KEY-bellsoft"
           state: present
 
-    - name: Add specified repository into sources list
-      ansible.builtin.apt_repository:
-        repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
-        state: present
+      - name: Add specified repository into sources list
+        ansible.builtin.apt_repository:
+          repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
+          state: present
 
-    - name: Fix Sources
-      replace:
-        path: "/etc/apt/sources.list"
-        regexp: "^# deb-src "
-        replace: "deb-src "
-        backup: yes
+      - name: Fix Sources
+        replace:
+          path: "/etc/apt/sources.list"
+          regexp: "^# deb-src "
+          replace: "deb-src "
+          backup: yes
 
-    - name: Install Dependencies
-      apt:
-        name: "{{ pkgs }}"
-        state: present
-        update_cache: yes
+      - name: Install Dependencies
+        apt:
+          name: "{{ pkgs }}"
+          state: present
+          update_cache: yes
 
-    - name: Build Dependencies
-      apt:
-        name: "{{pkgs2 }}"
-        state: build-dep
+      - name: Build Dependencies
+        apt:
+          name: "{{pkgs2 }}"
+          state: build-dep
 #        update_cache: yes
 
-    - name: Add an Apt signing key, uses whichever key is at the URL
-      ansible.builtin.apt_key:
-        url: "https://download.bell-sw.com/pki/GPG-KEY-bellsoft"
-        state: present
+      - name: Add an Apt signing key, uses whichever key is at the URL
+        ansible.builtin.apt_key:
+          url: "https://download.bell-sw.com/pki/GPG-KEY-bellsoft"
+          state: present
 
-    - name: Add specified repository into sources list
-      ansible.builtin.apt_repository:
-        repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
-        state: present
+      - name: Add specified repository into sources list
+        ansible.builtin.apt_repository:
+          repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
+          state: present
 
-    - name: Update Profile
-      lineinfile:
-        path: "/etc/profile"
-        line: "export JAVA_HOME=/usr/lib/jvm/bellsoft-java8-full-amd64"
-        insertafter: EOF
-        backup: yes
+      - name: Update Profile
+        lineinfile:
+          path: "/etc/profile"
+          line: "export JAVA_HOME=/usr/lib/jvm/bellsoft-java8-full-amd64"
+          insertafter: EOF
+          backup: yes
 
-    - name: Run setup
-      command: './unix_setup.sh'
-      become: yes
-      args:
-        chdir: "/Downloads/autopsy-4.19.1"
-      environment:
-        JAVA_HOME: /usr/lib/jvm/bellsoft-java8-full-amd64
-      ignore_errors: True
-      register: results
+      - name: Run setup
+        command: './unix_setup.sh'
+        become: yes
+        args:
+          chdir: "/Downloads/autopsy-4.19.1"
+        environment:
+          JAVA_HOME: /usr/lib/jvm/bellsoft-java8-full-amd64
+        ignore_errors: True
+        register: results
 
-    - name: debug
-      debug:
-        var: results
+      - name: debug
+        debug:
+          var: results
 
 #    - name: Directories
 #      file:
@@ -110,19 +110,19 @@
 #        mode: 0755
 #        state: directory
 
-    - name: Create a symbolic link
-      ansible.builtin.file:
-        src: /Downloads/autopsy-4.19.1
-        dest: /root/autopsy-files/autopsy-4.19.1
-        owner: root
-        group: root
-        state: link
+      - name: Create a symbolic link
+        ansible.builtin.file:
+          src: /Downloads/autopsy-4.19.1
+          dest: /root/autopsy-files/autopsy-4.19.1
+          owner: root
+          group: root
+          state: link
 
-    - name: setfacl
-      acl:
-        path: /root
-        entity: vagrant
-        etype: user
-        permissions: x
-        default: no
-        state: present
+      - name: setfacl
+        acl:
+          path: /root
+          entity: vagrant
+          etype: user
+          permissions: x
+          default: no
+          state: present
