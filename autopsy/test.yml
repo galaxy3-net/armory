@@ -14,7 +14,7 @@
     path: /home/mdtutorials2/sample_file.txt
   register: result
 
-- -name: Debug
+- name: Debug
    debug:
       msg: "Ansible When File Exists Example."
    when: result.stat.exists
