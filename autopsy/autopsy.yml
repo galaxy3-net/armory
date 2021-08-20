@@ -54,7 +54,7 @@
         state: directory
         mode: "{{ item.mode | default('0755') }}"
       loop:
-        dirs
+        "{{ dirs }}"
 
 
 
@@ -163,4 +163,4 @@
         group: "{{ item.group | default('root') }}"
         state: link
       loop:
-        links
+        "{{ links }}"
