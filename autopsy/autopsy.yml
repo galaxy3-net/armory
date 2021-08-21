@@ -276,3 +276,8 @@
         state: link
       loop:
         "{{ links }}"
+
+    - name: Clone Armory to /Armory
+      git:
+        repo: https://github.com/sleuthkit/autopsy_addon_modules.git
+        dest: /AutopsyModules
