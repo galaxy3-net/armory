@@ -25,6 +25,9 @@
       - libmagickcore-dev
       - libde265
       - libheif
+      - libvshadow
+      - libvshadow-python3
+      - plaso-tools
     urls:
       - url: 'https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.19.1/autopsy-4.19.1.zip'
         dest: '/Downloads/autopsy-4.19.1.zip'
@@ -197,6 +200,11 @@
     - name: Add specified repository into sources list
       ansible.builtin.apt_repository:
         repo: "deb [arch=amd64] https://apt.bell-sw.com/ stable main"
+        state: present
+
+    - name: Add specified repository into sources list
+      ansible.builtin.apt_repository:
+        repo: "ppa:gift/stable"
         state: present
 
     - name: Fix Sources
