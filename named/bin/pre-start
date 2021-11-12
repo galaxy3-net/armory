@@ -2,12 +2,12 @@
 
 function update_resolve
 {
-  echo "domain=${1}" >> /etc/resolv.conf
+  echo "domain ${1}" >> /etc/resolv.conf
 }
 
 var1=${1}
 for item in ${var1[@]}
 do
   echo "Checking ${item}"
-  egrep "domain=${item}" /etc/resolv.conf ||  update_resolve "${item}"
+  egrep "domain ${item}" /etc/resolv.conf ||  update_resolve "${item}"
 done
