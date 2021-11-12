@@ -24,7 +24,7 @@ sudo systemctl restart docker
 sleep 10
 
 # (cd Docker && sudo -E docker build -t ${__CONTAINER_IMAGE__} .)
-sudo bin/pre-start "${__DOMAIN_LIST__[@]}"
+sudo bin/pre-start "${__DOMAIN_LIST__}"
 __INTERFACE__=$(netstat -r | awk '$1 == "10.55.55.0" {print $8}')
 echo ${__INTERFACE__}
 sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
