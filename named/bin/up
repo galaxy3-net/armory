@@ -28,11 +28,11 @@ sleep 10
 __INTERFACE__=$(netstat -r | awk '$1 == "10.55.55.0" {print $8}')
 echo ${__INTERFACE__}
 sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
-sudo systemctl stop systemd-resolved
+#sudo systemctl stop systemd-resolved
 
 sudo -E docker-compose up --build --remove-orphans -d
-[ ! -e /etc/resolv.conf.orig_galaxy3 ] && sudo cp /etc/resolv.conf /etc/resolv.conf.orig_galaxy3
+#[ ! -e /etc/resolv.conf.orig_galaxy3 ] && sudo cp /etc/resolv.conf /etc/resolv.conf.orig_galaxy3
 
-sudo cp Docker/files/etc/resolv.conf /etc/resolv.conf
+#sudo cp Docker/files/etc/resolv.conf /etc/resolv.conf
 
 
