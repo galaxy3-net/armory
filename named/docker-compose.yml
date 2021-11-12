@@ -9,8 +9,8 @@ services:
     container_name: named
 #    entrypoint: /sbin/g3_entrypoint
     ports:
-      - 10.55.55.2:53:53/tcp
-      - 10.55.55.2:53:53/udp
+      - "10.55.55.2:53:53/tcp"
+      - "10.55.55.2:53:53/udp"
 #    volumes:
 #      - /splunk/etc:/opt/splunk/etc:rw
 #      - /splunk/var:/opt/splunk/var:rw
