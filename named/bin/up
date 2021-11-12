@@ -28,5 +28,18 @@ sleep 10
 __INTERFACE__=$(netstat -r | awk '$1 == "10.55.55.0" {print $8}')
 echo ${__INTERFACE__}
 sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+sudo systemctl stop systemd-resolv
 
 sudo -E docker-compose up --build --remove-orphans -d
+[ ! -e /etc/resolv.conf.orig_galaxy3 ] && cp /etc/resolv.conf /etc/resolv.conf.orig_galaxy3
+
+cat <<_EOD_ > /etc/resolv.conf
+nameserver 10.55.55.2
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 127.0.0.53
+
+search modell.galaxy3.net
+_EOD_
+
+
