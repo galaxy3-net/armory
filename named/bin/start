@@ -2,6 +2,6 @@
 
 source ./.env
 
-sudo docker-compose up --build
+sudo docker-compose start --build
 
 # [ -d ${GITLAB_HOME} ] && sudo rsync -av ${GITLAB_HOME}/ ${GITLAB_BACKUP}
