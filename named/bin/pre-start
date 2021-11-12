@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 var1=${@}
 
-function update_resolve
+__RESOLVE_FILE_/etc/resolv.conf
+
+function update_domain
 {
-  echo "domain ${1}" >> /etc/resolv.conf
+  echo "domain ${1}" >> ${__RESOLVE_FILE_}
+}
+
+function update_searchlist
+{
+  echo "search ${1}" >> ${__RESOLVE_FILE_}
 }
 
 cat <<__EOD__
@@ -18,11 +25,13 @@ __EOD__
 for item in ${var1[@]}
 do
   echo "Checking ${item}"
-  egrep "domain ${item}" /etc/resolv.conf ||  update_resolve "${item}"
+  egrep "domain ${item}" ${__RESOLVE_FILE_} ||  update_domain "${item}"
 done
 
-printf "\n\n/etc/resolv.conf\n"
-cat /etc/resolv.conf
+egrep "search ${var1[@]}" || update_searchlist ${var1[@]}
+
+printf "\n\n${__RESOLVE_FILE_}\n"
+cat ${__RESOLVE_FILE_}
 
 cat <<__EOD__
 
