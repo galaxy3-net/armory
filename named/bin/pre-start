@@ -1,10 +1,10 @@
 function update_resolve
 {
-  sudo echo "domain=${1}" >> /etc/resolv.conf
+  echo "domain=${1}" >> /etc/resolv.conf
 }
 
 for item in ${__DOMAIN_LIST__[@]}
 do
   echo "Checking ${item}"
-  egrep "domain=${item}" /etc/resolv.conf || update_resolve "${item}"
+  egrep "domain=${item}" /etc/resolv.conf || sudo update_resolve "${item}"
 done
