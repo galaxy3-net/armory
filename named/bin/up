@@ -33,7 +33,7 @@ sudo systemctl stop systemd-resolv
 sudo -E docker-compose up --build --remove-orphans -d
 [ ! -e /etc/resolv.conf.orig_galaxy3 ] && cp /etc/resolv.conf /etc/resolv.conf.orig_galaxy3
 
-cat <<_EOD_ > /etc/resolv.conf
+sudo cat <<_EOD_ > /etc/resolv.conf
 nameserver 10.55.55.2
 nameserver 8.8.8.8
 nameserver 8.8.4.4
