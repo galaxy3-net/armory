@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+var1=${@}
 
 function update_resolve
 {
@@ -9,16 +10,18 @@ cat <<__EOD__
 
   Processing Domains
 
-  ${1}
+  ${var1[@]}
+
 __EOD__
 
-var1=${@}
+
 for item in ${var1[@]}
 do
   echo "Checking ${item}"
   egrep "domain ${item}" /etc/resolv.conf ||  update_resolve "${item}"
 done
 
+printf "\n\n/etc/resolv.conf\n"
 cat /etc/resolv.conf
 
 cat <<__EOD__
