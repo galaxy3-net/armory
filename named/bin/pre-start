@@ -1,0 +1,4 @@
+for item in ${__DOMAIN_LIST__[@]}
+do
+  egrep "domain=${item}" /etc/resolv.conf || echo "domain=${item}" >> /etc/resolv.conf
+done
