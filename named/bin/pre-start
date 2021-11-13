@@ -11,7 +11,7 @@ function update_domain
 function update_searchlist
 {
   echo "Adding search list"
-  echo "search ${1}" >> ${__RESOLVE_FILE__}
+  echo "search ${@}" >> ${__RESOLVE_FILE__}
 }
 
 cat <<__EOD__
