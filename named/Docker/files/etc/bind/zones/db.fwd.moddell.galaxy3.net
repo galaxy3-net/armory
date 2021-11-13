@@ -3,48 +3,46 @@
 ;
 $TTL	604800
 moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
-	   			  9		; Serial
+	   			 10		; Serial
 			   3600		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
 ;@	IN	NS	ns1.galaxy3.net.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
+@	IN	A	10.55.55.2
+;@	IN	AAAA	::1
 
+;
 ;Name Server Information
+;
 moddell.galaxy3.net.        IN      NS      ns1.moddell.galaxy3.net.
+
+;
 ;Name Server A records
-;ns1.moddell.galaxy3.net.      IN      A       172.17.0.2
-ns1.moddell.galaxy3.net.      IN      A       10.55.55.2
-
-
-endor.moddell.galaxy3.net.	IN	A	10.55.55.3
-endor2.moddell.galaxy3.net.	IN	CNAME	endor.moddell.galaxy3.net.
-kamino.moddell.galaxy3.net.	IN	A	10.55.55.4
-kali.moddell.galaxy3.net.	IN	CNAME	kamino.moddell.galaxy3.net.
-proxy.moddell.galaxy3.net.	IN	A	10.55.55.5
-nakadia.moddell.galaxy3.net.	IN	A	10.55.55.6
-splunk.moddell.galaxy3.net.	IN	CNAME	nakadia.moddell.galaxy3.net.
-
-naboo.moddell.galaxy3.net.	IN	A	10.55.55.9
-ucibox.moddell.galaxy3.net.	IN	CNAME	naboo.moddell.galaxy3.net.
-
-vulpter.moddell.galaxy3.net.	IN	A	10.55.55.8
-centosbox.moddell.galaxy3.net.	IN	CNAME	vulpter.moddell.galaxy3.net.
-
+;
+bespin.moddell.galaxy3.net.	    IN	A	10.55.55.101
 corellia.moddell.galaxy3.net.	IN	A	10.55.55.15
-win10ent.moddell.galaxy3.net.	IN	CNAME	corellia.moddell.galaxy3.net.
+localhost.moddell.galaxy3.net.  IN  A   127.0.0.1
+ns1.moddell.galaxy3.net.        IN  A   10.55.55.2
+endor.moddell.galaxy3.net.	    IN	A	10.55.55.3
+kamino.moddell.galaxy3.net.	    IN	A	10.55.55.4
+manaan.moddell.galaxy3.net.	    IN	A	10.55.55.16
+proxy.moddell.galaxy3.net.	    IN	A	10.55.55.5
+nakadia.moddell.galaxy3.net.	IN	A	10.55.55.6
+naboo.moddell.galaxy3.net.	    IN	A	10.55.55.9
+vulpter.moddell.galaxy3.net.	IN	A	10.55.55.8
 
-manaan.moddell.galaxy3.net.	IN	A	10.55.55.16
-win2016.moddell.galaxy3.net.	IN	CNAME	manaan.moddell.galaxy3.net.
-
-bespin.moddell.galaxy3.net.	IN	A	10.55.55.101
+;
+;  CNAME Records
+;
+centosbox.moddell.galaxy3.net.	IN	CNAME	vulpter.moddell.galaxy3.net.
+endor2.moddell.galaxy3.net.	    IN	CNAME	endor.moddell.galaxy3.net.
+jakku.moddell.galaxy3.net.	    IN	CNAME	jakku.arkanis.galaxy3.net.
+kali.moddell.galaxy3.net.	    IN	CNAME	kamino.moddell.galaxy3.net.
 owaspbwa.moddell.galaxy3.net.	IN	CNAME	bespin.moddell.galaxy3.net.
-
+splunk.moddell.galaxy3.net.	    IN	CNAME	nakadia.moddell.galaxy3.net.
 tattooine.moddell.galaxy3.net.	IN	CNAME	tattooine.arkanis.galaxy3.net.
-jakku.moddell.galaxy3.net.	IN	CNAME	jakku.arkanis.galaxy3.net.
-
-mars.moddell.galaxy3.net.	IN	A	10.55.55.220
-mars2.moddell.galaxy3.net.	IN	CNAME	mars.moddell.galaxy3.net.
+ucibox.moddell.galaxy3.net.	    IN	CNAME	naboo.moddell.galaxy3.net.
+win10ent.moddell.galaxy3.net.	IN	CNAME	corellia.moddell.galaxy3.net.
+win2016.moddell.galaxy3.net.	IN	CNAME	manaan.moddell.galaxy3.net.
