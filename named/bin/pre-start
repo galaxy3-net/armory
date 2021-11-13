@@ -14,6 +14,15 @@ function update_searchlist
   echo "search ${@}" >> ${__RESOLVE_FILE__}
 }
 
+function start_docker
+{
+  sudo systemctl enable docker
+  sudo systemctl restart docker
+}
+
+echo ${__INTERFACE__}
+sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+
 cat <<__EOD__
 
   Processing Domains
@@ -41,3 +50,4 @@ Finished
 __EOD__
 
 
+../bin/docker-status ; [ ${?} -ne 0 ] && start_docker
