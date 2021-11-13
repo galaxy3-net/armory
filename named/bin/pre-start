@@ -3,6 +3,11 @@ var1=${@}
 
 __RESOLVE_FILE__=/etc/resolv.conf
 
+function remove_google
+{
+  sed -d 'd/nameserver 8.8.8.8/' /etc/resolv.conf
+}
+
 function update_domain
 {
   echo "domain ${1}" >> ${__RESOLVE_FILE__}
@@ -22,6 +27,8 @@ function start_docker
 
 echo ${__INTERFACE__}
 sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+
+remove_google
 
 cat <<__EOD__
 
