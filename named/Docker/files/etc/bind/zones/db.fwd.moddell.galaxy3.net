@@ -2,7 +2,7 @@
 ; BIND data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	ns1.moddell.galaxy3.net. root.ns1.moddell.galaxy3.net.localhost. (
+moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
 	   			  6		; Serial
 			   3600		; Refresh
 			  86400		; Retry
@@ -14,10 +14,12 @@ $TTL	604800
 @	IN	AAAA	::1
 
 ;Name Server Information
-        IN      NS      ns1.galaxy3.net.
+moddell.galaxy3.net.        IN      NS      ns1.galaxy3.net.
 ;Name Server A records
 ;ns1.moddell.galaxy3.net.      IN      A       172.17.0.2
-;ns1.moddell.galaxy3.net.      IN      A       10.55.55.2
+ns1.moddell.galaxy3.net.      IN      A       10.55.55.2
+
+
 endor.moddell.galaxy3.net.	IN	A	10.55.55.3
 endor2.moddell.galaxy3.net.	IN	CNAME	endor.moddell.galaxy3.net.
 kamino.moddell.galaxy3.net.	IN	A	10.55.55.4
