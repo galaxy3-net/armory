@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
-	   			 11		; Serial
+	   			 12		; Serial
 			   3600		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -21,7 +21,7 @@ moddell.galaxy3.net.        IN      NS      ns1.moddell.galaxy3.net.
 ;
 ;Name Server A records
 ;
-bespin.@	    IN	A	10.55.55.101
+bespin.moddell.galaxy3.net.     IN	A	10.55.55.101
 corellia.moddell.galaxy3.net.	IN	A	10.55.55.15
 localhost.moddell.galaxy3.net.  IN  A   127.0.0.1
 ns1.moddell.galaxy3.net.        IN  A   10.55.55.2
