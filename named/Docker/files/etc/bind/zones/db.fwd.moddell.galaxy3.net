@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
-	   			  7		; Serial
+	   			  8		; Serial
 			   3600		; Refresh
 			  86400		; Retry
 			2419200		; Expire
