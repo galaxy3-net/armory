@@ -1,13 +1,13 @@
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL	604800
+$TTL	3h
 moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
 	   			 12		; Serial
-			   3600		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+			     3h     ; Refresh
+			     1h		; Retry
+			     1w		; Expire
+			     1h )	; Negative Cache TTL
 ;
 ;@	IN	NS	ns1.galaxy3.net.
 @	IN	A	10.55.55.2

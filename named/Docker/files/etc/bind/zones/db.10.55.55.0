@@ -1,0 +1,30 @@
+$TTL    3h
+55.55.10.in-addr.arpa.  IN  SOA ns1.moddell.galaxy3.net admin@galaxy3.net. (
+                        2   ; Serial
+                       3h   ; Refreah after 3 hours
+                       1h   ; Retry after 1 hour
+                       1w   ; Expire after 1 week
+                       1h ) ; Negative caching TTL of 1 hour
+
+;
+;  Name Servers
+;
+2.55.55.10.in-addr.arpa.    IN  NS  na1.moddell.galaxy3.net
+
+;
+;  Addresses point to anonical name
+;
+101.55.55.10.in-addr.arpa.  IN   PTR    bespin.moddell.galaxy3.net.
+15.55.55.10.in-addr.arpa.   IN   PTR    corellia.moddell.galaxy3.net.
+1.55.55.10.in-addr.arpa.    IN   PTR    localhost.moddell.galaxy3.net.
+2.55.55.10.in-addr.arpa.    IN   PTR    ns1.moddell.galaxy3.net.
+3.55.55.10.in-addr.arpa.    IN   PTR    endor.moddell.galaxy3.net.
+4.55.55.10.in-addr.arpa.    IN   PTR    kamino.moddell.galaxy3.net.
+16.55.55.10.in-addr.arpa.   IN   PTR    manaan.moddell.galaxy3.net.
+5.55.55.10.in-addr.arpa.    IN   PTR    proxy.moddell.galaxy3.net.
+6.55.55.10.in-addr.arpa.    IN   PTR    nakadia.moddell.galaxy3.net.
+9.55.55.10.in-addr.arpa.    IN   PTR    naboo.moddell.galaxy3.net.
+8.55.55.10.in-addr.arpa.    IN   PTR    vulpter.moddell.galaxy3.net.
+50.55.55.10.in-addr.arpa.    IN   PTR   tattooine.arkanis.galaxy3.net.
+51.55.55.10.in-addr.arpa.    IN   PTR   jakku.arkanis.galaxy3.net.
+57.55.55.10.in-addr.arpa.    IN   PTR   krk.arkanis.galaxy3.net.
