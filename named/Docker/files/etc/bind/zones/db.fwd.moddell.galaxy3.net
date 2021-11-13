@@ -3,15 +3,15 @@
 ;
 $TTL	604800
 moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
-	   			  8		; Serial
+	   			  9		; Serial
 			   3600		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
 ;@	IN	NS	ns1.galaxy3.net.
-;@	IN	A	127.0.0.1
-;@	IN	AAAA	::1
+@	IN	A	127.0.0.1
+@	IN	AAAA	::1
 
 ;Name Server Information
 moddell.galaxy3.net.        IN      NS      ns1.moddell.galaxy3.net.
