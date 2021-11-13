@@ -9,12 +9,12 @@ moddell.galaxy3.net.	IN	SOA	ns1.moddell.galaxy3.net. admin.galaxy3.net. (
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	ns1.galaxy3.net.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
+;@	IN	NS	ns1.galaxy3.net.
+;@	IN	A	127.0.0.1
+;@	IN	AAAA	::1
 
 ;Name Server Information
-moddell.galaxy3.net.        IN      NS      ns1.galaxy3.net.
+moddell.galaxy3.net.        IN      NS      ns1.moddell.galaxy3.net.
 ;Name Server A records
 ;ns1.moddell.galaxy3.net.      IN      A       172.17.0.2
 ns1.moddell.galaxy3.net.      IN      A       10.55.55.2
