@@ -3,6 +3,11 @@ var1=${@}
 
 __RESOLVE_FILE__=/etc/resolv.conf
 
+function copy_systemd_resoved
+{
+  cp Docker/files/etc/systemd/resolved.conf /etc/systemd/resolved.conf
+}
+
 function remove_google
 {
   sed -i '/nameserver 8.8.8.8/d' /etc/resolv.conf
@@ -25,10 +30,14 @@ function start_docker
   sudo systemctl restart docker
 }
 
-echo ${__INTERFACE__}
-sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+function setup_interface() {
+  echo ${__INTERFACE__}
+  sudo ifconfig ${__INTERFACE__}:0 10.55.55.2 netmask 255.255.255.0 up
+}
 
+setup_interface
 remove_google
+copy_systemd_resoved
 
 cat <<__EOD__
 
