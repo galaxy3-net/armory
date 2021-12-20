@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# exec 1> /var/log/deployer.log
+
+_deploymentdir="/.deployments"
+
+for file in ${_deploymentdir}
+do
+  logger -i "${file}\n"
+done

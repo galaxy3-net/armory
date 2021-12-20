@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_deploymentdir="/.deployments"
+
+[[ ! -d ${_deploymentdir} ]] && mkdir ${_deploymentdir}
+
+ln -s /Armory/deployer/files/stub ${_deploymentdir}
+
+chmod u+x ${_deploymentdir}/stub
