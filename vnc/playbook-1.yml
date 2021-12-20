@@ -1,0 +1,5 @@
+---
+- hosts: vnc
+  connection: local
+  roles:
+    - role: 'roles/vnc'
