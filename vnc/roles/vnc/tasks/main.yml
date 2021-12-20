@@ -53,3 +53,20 @@
     owner: vagrant
     group: vagrant
     mode: '0600'
+
+- name: Check the status of VNC
+  command: ./check.sh 5901
+  register: check_output
+  become: true
+  ignore_errors: true
+
+- name: Show all output fro the netstat command.
+  debug:
+    var: check_output.failed
+  when: check_output.failed
+
+- name: Start VNC service for vagrant on display :1
+  command: '/usr/bin/vncserver -localhost no'
+  become: yes
+  become_user: "vagrant"
+  when: check_output.failed
