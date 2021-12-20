@@ -1,0 +1,55 @@
+---
+# tasks file for vnc
+
+- name: Show the Hostname
+  debug:
+    msg: "Hostname is {{ ansible_hostname }} - {{ ansible_os_family }}"
+
+- name: Show all of the available facts for this host.
+  debug:
+    var: ansible_facts
+
+    #- name: Build dep
+    #  apt:
+    #    pkg: "kubuntu-desktop"
+    #    state: build-dep
+
+- name: Install Packages
+  apt:
+    pkg: "{{ apt.pkgs_1 }}"
+    autoclean: true
+    autoremove: true
+    cache_valid_time: 86400
+    install_recommends: true
+    update_cache: true
+    state: "{{ apt.state }}"
+    #state: latest
+  become: true
+
+- name: Install Packages
+  apt:
+    pkg: "{{ apt.pkgs_2 }}"
+    autoclean: true
+    autoremove: true
+    cache_valid_time: 86400
+    install_recommends: true
+    update_cache: true
+    state: "{{ apt.state }}"
+    #state: latest
+  become: true
+
+- name: Create the .vnc directory for vagrant
+  file:
+    path: "/home/vagrant/.vnc"
+    state: "directory"
+    owner: "vagrant"
+    group: "vagrant"
+    mode: 00755
+
+- name: Copy file with owner and permissions
+  copy:
+    src: files/passwd
+    dest: /home/vagrant/.vnc/passwd
+    owner: vagrant
+    group: vagrant
+    mode: '0600'
