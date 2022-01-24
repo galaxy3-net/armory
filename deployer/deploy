@@ -6,5 +6,6 @@ _deploymentdir="/.deployments"
 
 for file in ${_deploymentdir}
 do
-  logger -i "${file}\n"
+  logger -i "${file}"
+  ${file}
 done

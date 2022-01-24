@@ -70,3 +70,12 @@
   become: yes
   become_user: "vagrant"
   when: check_output.failed
+
+
+- name: CRON for DHCPD
+  cron:
+    name: "start_dhcpd"
+    chdir: "/Armory/dhcp"
+    special_time: "reboot"
+    job: "bin/up"
+  become: true
