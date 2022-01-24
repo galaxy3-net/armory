@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /Armory/vnc
+
 # Script to add VNC entry to Ansible hosts file
 
 export _HOSTS='/etc/ansible/hosts'
