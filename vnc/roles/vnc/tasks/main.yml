@@ -80,8 +80,6 @@
     job: "/Armory/vnc/setup.sh"
 
 - name: permit VNC
-  ansible.posix.firewalld:
-    service: vnc
-    permanent: yes
-    state: enabled
-  become: true
+  command: 'firewall-cmd --add-port=5901/tcp'
+  become: yes
+
