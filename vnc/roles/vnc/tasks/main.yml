@@ -75,7 +75,6 @@
 - name: CRON for DHCPD
   cron:
     name: "start_vmc"
+    user: "vagrant"
     special_time: "reboot"
     job: "/Armory/vnc && ./setup.sh"
-  become: true
-
