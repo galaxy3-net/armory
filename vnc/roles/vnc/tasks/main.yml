@@ -74,8 +74,8 @@
 
 - name: CRON for DHCPD
   cron:
-    name: "start_dhcpd"
+    name: "start_vmc"
     special_time: "reboot"
-    job: "bin/up"
+    job: "/Armory/vnc && ./setup.sh"
   become: true
-  chdir: "/Armory/dhcp"
+
