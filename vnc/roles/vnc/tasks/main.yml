@@ -77,4 +77,4 @@
     name: "start_vmc"
     user: "vagrant"
     special_time: "reboot"
-    job: "/Armory/vnc && ./setup.sh"
+    job: "cd /Armory/vnc && ./setup.sh"
