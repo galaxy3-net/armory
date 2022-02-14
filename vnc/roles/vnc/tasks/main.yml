@@ -72,10 +72,10 @@
   when: check_output.failed
 
 
-- name: CRON for DHCPD
+- name: CRON for VNC
   cron:
     name: "start_vnc"
-    user: "vagrant"
+    user: "root"
     special_time: "reboot"
     job: "/Armory/vnc/setup.sh"
 
