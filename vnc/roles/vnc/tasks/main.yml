@@ -62,7 +62,7 @@
 
 # VNC Setup for Vagrant on port 5901
 - name: Check the status of VNC
-  command: ./check.sh 5901
+  command: ./check.sh 1
   register: check_output
   become: true
   ignore_errors: true
@@ -80,7 +80,7 @@
 
 # VNC Setup for Instructor on port 5902
 - name: Check the status of VNC
-  command: ./check.sh 5902
+  command: ./check.sh 2
   register: check_output
   become: true
   ignore_errors: true
