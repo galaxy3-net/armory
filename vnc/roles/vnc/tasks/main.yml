@@ -40,20 +40,27 @@
 
 - name: Create the .vnc directory for vagrant
   file:
-    path: "/home/vagrant/.vnc"
+    path: "/home/{{ item }}/.vnc"
     state: "directory"
     owner: "vagrant"
     group: "vagrant"
     mode: 00755
+  loop:
+    - vagrant
+    - instructor
 
 - name: Copy file with owner and permissions
   copy:
     src: files/passwd
-    dest: /home/vagrant/.vnc/passwd
+    dest: /home/{{ item }}/.vnc/passwd
     owner: vagrant
     group: vagrant
     mode: '0600'
+  loop:
+    - vagrant
+    - instructor
 
+# VNC Setup for Vagrant on port 5901
 - name: Check the status of VNC
   command: ./check.sh 5901
   register: check_output
@@ -69,6 +76,24 @@
   command: '/usr/bin/vncserver -localhost no'
   become: yes
   become_user: "vagrant"
+  when: check_output.failed
+
+# VNC Setup for Instructor on port 5902
+- name: Check the status of VNC
+  command: ./check.sh 5902
+  register: check_output
+  become: true
+  ignore_errors: true
+
+- name: Show all output fro the netstat command.
+  debug:
+    var: check_output.failed
+  when: check_output.failed
+
+- name: Start VNC service for vagrant on display :2
+  command: '/usr/bin/vncserver -localhost no'
+  become: yes
+  become_user: "instructor"
   when: check_output.failed
 
 
