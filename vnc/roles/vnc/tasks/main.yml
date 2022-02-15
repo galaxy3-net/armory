@@ -107,6 +107,9 @@
     job: "/Armory/vnc/setup.sh"
 
 - name: permit VNC
-  command: 'firewall-cmd --add-port=5901/tcp'
+  command: "{{ item }}
   become: yes
+  loop:
+    - 'firewall-cmd --add-port=5901/tcp'
+    - 'firewall-cmd --add-port=5902/tcp'
 
