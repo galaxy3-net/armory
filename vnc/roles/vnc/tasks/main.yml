@@ -92,7 +92,7 @@
 #  when: check_output.failed
 
 - name: Start VNC service for vagrant on display :2
-  command: '/usr/bin/vncserver -localhost no :1'
+  command: '/usr/bin/vncserver -localhost no'
   become: yes
   become_user: "instructor"
   become: true
