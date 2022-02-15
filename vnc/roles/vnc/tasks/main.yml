@@ -80,7 +80,7 @@
 
 # VNC Setup for Instructor on port 5902
 - name: Check the status of VNC
-  command: ./check.sh 1
+  command: ./check.sh 2
   register: check_output
   become_user: "instructor"
   become: true
