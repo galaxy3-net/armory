@@ -85,7 +85,7 @@
   become_user: "instructor"
   ignore_errors: true
 
-- name: Show all output fro the netstat command.
+- name: Show all output from the netstat command.
   debug:
     var: check_output.failed
 #  when: check_output.failed
