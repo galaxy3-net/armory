@@ -64,7 +64,7 @@
 - name: Check the status of VNC
   command: ./check.sh 1
   register: check_output
-  become: true
+  become_user: "vagrant"
   ignore_errors: true
 
 - name: Show all output fro the netstat command.
@@ -80,9 +80,9 @@
 
 # VNC Setup for Instructor on port 5902
 - name: Check the status of VNC
-  command: ./check.sh 2
+  command: ./check.sh 1
   register: check_output
-  become: true
+  become_user: "instructor"
   ignore_errors: true
 
 - name: Show all output fro the netstat command.
