@@ -83,6 +83,7 @@
   command: ./check.sh 1
   register: check_output
   become_user: "instructor"
+  become: true
   ignore_errors: true
 
 - name: Show all output from the netstat command.
