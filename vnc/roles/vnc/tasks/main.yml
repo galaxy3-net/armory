@@ -95,6 +95,7 @@
   command: '/usr/bin/vncserver -localhost no :1'
   become: yes
   become_user: "instructor"
+  become: true
   when: check_output.failed
 
 
