@@ -88,7 +88,7 @@
 - name: Show all output fro the netstat command.
   debug:
     var: check_output.failed
-  when: check_output.failed
+#  when: check_output.failed
 
 - name: Start VNC service for vagrant on display :2
   command: '/usr/bin/vncserver -localhost no :1'
