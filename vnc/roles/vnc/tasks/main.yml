@@ -42,8 +42,8 @@
   file:
     path: "/home/{{ item }}/.vnc"
     state: "directory"
-    owner: "vagrant"
-    group: "vagrant"
+    owner: "{{ item }}"
+    group: "{{ item }}"
     mode: 00755
   loop:
     - vagrant
@@ -53,8 +53,8 @@
   copy:
     src: files/passwd
     dest: /home/{{ item }}/.vnc/passwd
-    owner: vagrant
-    group: vagrant
+    owner: "{{ item }}"
+    group: "{{ item }}"
     mode: '0600'
   loop:
     - vagrant
