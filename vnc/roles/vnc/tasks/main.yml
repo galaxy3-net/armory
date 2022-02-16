@@ -75,7 +75,7 @@
 
 - name: Start VNC service for vagrant on display :1
   script:
-    cmd: /bin/bash -c /Armory/vnc/startserver.sh vagrant
+    cmd: /Armory/vnc/startserver.sh vagrant
     chdir: /home/vagrant
     executable: /bin/bash
   become: yes
