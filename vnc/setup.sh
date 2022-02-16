@@ -17,4 +17,4 @@ __EOD__
 
 /bin/egrep '^\[vnc\]' ${_HOSTS} || insertrow
 
-/usr/bin/ansible-playbook ./playbook-1.yml
+/usr/bin/ansible-playbook -e "pipelining=False" ./playbook-1.yml
