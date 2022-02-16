@@ -4,5 +4,5 @@
 /usr/bin/expect <<EOF
 spawn /usr/bin/vncserver -localhost no
 sleep 5
-expect "\r"
+expect "to connect to the VNC server.\r"
 EOF
