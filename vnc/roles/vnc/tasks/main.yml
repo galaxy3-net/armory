@@ -82,7 +82,8 @@
 
 # VNC Setup for Instructor on port 5902
 - name: Check the status of VNC
-  command: ./check.sh
+  command:
+    cmd: ./check.sh
   register: check_output
   become_user: "instructor"
   become: true
