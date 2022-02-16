@@ -94,10 +94,11 @@
 #  when: check_output.failed
 
 - name: Start VNC service for vagrant on display :2
-  command: '/usr/bin/vncserver -localhost no'
+  command:
+    cmd: /usr/bin/vncserver -localhost no -name instructor
+    chdir: /home/instructor
   become: yes
   become_user: "instructor"
-  become: true
   when: check_output.failed
 
 
