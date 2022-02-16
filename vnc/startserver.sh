@@ -6,7 +6,7 @@ global spawn_id timeout
 match_max 10000
 set timeout 12
 log_file startserver.log
-spawn ssh ${LOGNAME}@localhost
+spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${LOGNAME}@localhost
 set prompt ":|#|\\\$"
 interact -o -nobuffer -re $prompt return
 expect "${LOGNAME}@localhost's password: "
