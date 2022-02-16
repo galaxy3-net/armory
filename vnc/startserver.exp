@@ -1,3 +1,5 @@
 #!/usr/bin/expect
 
 spawn "/Armory/vnc/startserver.sh"
+set output $expect_out(buffer)
+puts "$output"
