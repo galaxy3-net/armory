@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/bin/vncserver -localhost no
+nohup /usr/bin/vncserver -localhost no &
