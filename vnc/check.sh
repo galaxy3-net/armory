@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vncserver -list -cleanstale :${1} | grep ":${1}"
+vncserver -list -cleanstale | egrep '^:[1,2]'

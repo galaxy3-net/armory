@@ -62,7 +62,7 @@
 
 # VNC Setup for Vagrant on port 5901
 - name: Check the status of VNC
-  command: ./check.sh 1
+  command: ./check.sh
   register: check_output
   become_user: "vagrant"
   become: true
@@ -74,7 +74,7 @@
   when: check_output.failed
 
 - name: Start VNC service for vagrant on display :1
-  command: '/usr/bin/vncserver -localhost no :1'
+  command: '/usr/bin/vncserver -localhost no'
   become: yes
   become_user: "vagrant"
   become: true
@@ -82,7 +82,7 @@
 
 # VNC Setup for Instructor on port 5902
 - name: Check the status of VNC
-  command: ./check.sh 2
+  command: ./check.sh
   register: check_output
   become_user: "instructor"
   become: true
