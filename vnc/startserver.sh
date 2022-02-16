@@ -3,5 +3,5 @@
 
 /usr/bin/expect <<EOF
 spawn /usr/bin/vncserver -localhost no
-expect "\r"
+expect eof
 EOF

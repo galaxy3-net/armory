@@ -17,4 +17,5 @@ apt:
     - tigervnc-common
     - tigervnc-xorg-extension
     - tigervnc-viewer
+    - screen
   
