@@ -74,7 +74,7 @@
   when: check_output.failed
 
 - name: Start VNC service for vagrant on display :1
-  command: ./startserver.sh vagrant
+  shell: /Armory/vnc/startserver.sh vagrant
   become: yes
   become_user: "vagrant"
   become: true
@@ -95,8 +95,7 @@
 #  when: check_output.failed
 
 - name: Start VNC service for vagrant on display :2
-  command:
-    cmd: /Armory/vnc/startserver.sh instructor
+  shell: /Armory/vnc/startserver.sh instructor
   become: yes
   become_user: "instructor"
   when: check_output.failed
