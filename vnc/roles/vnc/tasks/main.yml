@@ -74,7 +74,10 @@
   when: check_output.failed
 
 - name: Start VNC service for vagrant on display :1
-  shell: /Armory/vnc/startserver.sh vagrant
+  shell:
+    cmd: /Armory/vnc/startserver.sh vagrant
+    chdir: /home/vagrant
+    executable: /bin/bash
   become: yes
   become_user: "vagrant"
   become: true
