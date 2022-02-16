@@ -96,6 +96,8 @@
 - name: Start VNC service for vagrant on display :2
   command:
     cmd: /usr/bin/vncserver -localhost no -name instructor
+    stdin: " "
+    stdin_add_newline: yes
     chdir: /home/instructor
   become: yes
   become_user: "instructor"
