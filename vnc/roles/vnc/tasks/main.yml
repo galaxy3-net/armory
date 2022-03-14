@@ -164,4 +164,6 @@
   loop:
     - 'firewall-cmd --add-port=5901/tcp'
     - 'firewall-cmd --add-port=5902/tcp'
+    - 'firewall-cmd --add-port=5903/tcp'
+    - 'firewall-cmd --add-port=5904/tcp'
 
