@@ -103,6 +103,25 @@
   become_user: "instructor"
   when: check_output.failed
 
+# VNC Setup for Student on port 5903
+- name: Check the status of VNC
+  command:
+    cmd: ./check.sh
+  register: check_output
+  become_user: "student"
+  become: true
+  ignore_errors: true
+
+- name: Show all output from the netstat command.
+  debug:
+    var: check_output
+#  when: check_output.failed
+
+- name: Start VNC service for vagrant on display :2
+  shell: /Armory/vnc/startserver.sh student
+  become: yes
+  become_user: "student"
+  when: check_output.failed
 
 - name: CRON for VNC
   cron:
