@@ -127,6 +127,30 @@
   become_user: "student"
   when: check_output.failed
 
+
+# VNC Setup for Sysadmin on port 5904
+- name: Check the status of VNC
+  command:
+    cmd: ./check.sh
+  register: check_output
+  become_user: "sysadmin"
+  become: true
+  ignore_errors: true
+
+- name: Show all output from the netstat command.
+  debug:
+    var: check_output
+#  when: check_output.failed
+
+- name: Start VNC service for sysadmin on display :4
+  shell: /Armory/vnc/startserver.sh
+  become: yes
+  become_user: "sysadmin"
+  when: check_output.failed
+
+
+
+
 - name: CRON for VNC
   cron:
     name: "start_vnc"
