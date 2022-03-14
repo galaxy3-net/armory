@@ -97,7 +97,7 @@
     var: check_output
 #  when: check_output.failed
 
-- name: Start VNC service for vagrant on display :2
+- name: Start VNC service for instructor on display :2
   shell: /Armory/vnc/startserver.sh instructor
   become: yes
   become_user: "instructor"
@@ -117,8 +117,8 @@
     var: check_output
 #  when: check_output.failed
 
-- name: Start VNC service for vagrant on display :2
-  shell: /Armory/vnc/startserver.sh student
+- name: Start VNC service for student on display :3
+  shell: /Armory/vnc/startserver.sh
   become: yes
   become_user: "student"
   when: check_output.failed
