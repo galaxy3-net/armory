@@ -48,6 +48,8 @@
   loop:
     - vagrant
     - instructor
+    - student
+    - sysadmin
 
 - name: Copy file with owner and permissions
   copy:
@@ -59,6 +61,8 @@
   loop:
     - vagrant
     - instructor
+    - student
+    - sysadmin
 
 # VNC Setup for Vagrant on port 5901
 - name: Check the status of VNC
