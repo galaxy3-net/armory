@@ -11,7 +11,7 @@ spawn ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${LOGNAME}
 set prompt ":|#|\\\$"
 interact -o -nobuffer -re $prompt return
 expect "${LOGNAME}@localhost's password: "
-send "${LOGIN}\r"
+send "${LOGIN }\r"
 expect "from 127.0.0.1\r\r\n"
 send "vncserver -localhost no -depth 32\r"
 expect "to connect to the VNC server."
